@@ -19,7 +19,8 @@ add_executable(run hi.cpp)
 # mysql-connector library
 
 # костыль для меня потому что я не хочу ебаться с этим дальше ~moon1goblin
-set(mysql-concpp_DIR "/opt/homebrew/Cellar/mysql-connector-c++/9.3.0/")
+# set(mysql-concpp_DIR "/opt/homebrew/Cellar/mysql-connector-c++/9.3.0/")
+set(mysql-concpp_DIR "/home/linuxbrew/.linuxbrew/Cellar/mysql-connector-c++/9.3.0/")
 
 find_package(mysql-concpp REQUIRED)
 
