@@ -1,18 +1,23 @@
 # database structure?
 
+we dont habe to make other tables for now, this should be enough
+
 - main table:
 
 | eventid | userid | eventname | datetimebegin | datetimeend | isfullday | groupid |
+| ------- | ------ | --------- | ------------- | ----------- | --------- | ------- |
 
 
 - group table:
 
 | groupid | groupname |
+| ------- | --------- |
 
 
 - user table:
 
 | userid | username | permissions and shit, think about this later |
+| ------ | -------- | -------------------------------------------- |
 
 
 ## event types: 
