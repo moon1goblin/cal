@@ -7,7 +7,7 @@ docker build -t docker-cpp-example .
 docker run docker-cpp-example
 ```
 
-## to run docker compose
+## to run docker compose with the database
 
 ```
 docker-compose up -d

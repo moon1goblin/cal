@@ -1,19 +1,20 @@
 services:
-  api: 
-    image: cal-backend
-    build: ./blyat
-    ports:
-      - 8000:8000
-    depends_on:
-      db:
-        condition: service_healthy
+  # api: 
+  #   image: cal-api
+  #   build: .
+  #   ports:
+  #     - 8000:8000
+  #   depends_on:
+  #     db:
+  #       condition: service_healthy
   db:
-    # TODO: make this smaller size? is smaller even better?
     image: mysql:8
     ports:
+      - 3306:3306
+    expose:
       - 3306
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ROOT_PASSWORD: "root"
       MYSQL_USER: "user"
       MYSQL_PASSWORD: "password"
       MYSQL_DATABASE: "database"
