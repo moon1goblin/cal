@@ -10,9 +10,9 @@ services:
   db:
     image: mysql:8
     ports:
-      - 3306:3306
+      - 33060:33060
     expose:
-      - 3306
+      - 33060
     environment:
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_USER: "user"

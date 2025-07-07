@@ -7,9 +7,9 @@ int main() {
         mysqlx::Session sess(
             mysqlx::SessionOption::HOST, "localhost",
             mysqlx::SessionOption::PORT, 33060,
-            mysqlx::SessionOption::USER, "paul",
-            mysqlx::SessionOption::PWD, "1337",
-            mysqlx::SessionOption::DB, "test_db"
+            mysqlx::SessionOption::USER, "user",
+            mysqlx::SessionOption::PWD, "password",
+            mysqlx::SessionOption::DB, "database"
         );
 
         std::cout << "Connection to database " << "test_db" << " successfull" << std::endl;
