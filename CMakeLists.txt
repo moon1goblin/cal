@@ -14,7 +14,25 @@ string(APPEND CMAKE_CXX_FLAGS " -Wall")
 # string(APPEND CMAKE_CXX_FLAGS " -Wsign-conversion")
 string(APPEND CMAKE_CXX_FLAGS " -Werror")
 
-add_executable(run hi.cpp)
+add_executable(run src/hi.cpp)
+
+#-------------------------------------------------------
+# load environment variables from .env file
+
+file(STRINGS ${CMAKE_HOME_DIRECTORY}/.env ENV_FILE)
+foreach(VAR ${ENV_FILE})
+    string(REGEX MATCH "^[^=]*" KEY ${VAR})
+    string(REGEX REPLACE "^[^=]*=" "" VALUE ${VAR})
+    set(ENV{${KEY}} ${VALUE})
+	# define preprocessor macros for them
+	target_compile_definitions(run PRIVATE ${KEY}=${VALUE})
+	# message(STATUS $ENV{${KEY}})
+endforeach()
+
+#
+# target_compile_definitions(run PRIVATE MY_MACRO=$ENV{MYSQL_USER})
+
+#-------------------------------------------------------
 
 # mysql-connector library
 

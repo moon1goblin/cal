@@ -10,14 +10,14 @@ services:
   db:
     image: mysql:8
     ports:
-      - 33060:33060
+      - ${MYSQL_PORT}:${MYSQL_PORT}
     expose:
-      - 33060
+      - ${MYSQL_PORT}
     environment:
-      MYSQL_ROOT_PASSWORD: "root"
-      MYSQL_USER: "user"
-      MYSQL_PASSWORD: "password"
-      MYSQL_DATABASE: "database"
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 20s
