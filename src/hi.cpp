@@ -6,7 +6,7 @@ int main() {
         // Connect using X Protocol (default port: 33060)
         mysqlx::Session sess(
             mysqlx::SessionOption::HOST, "127.0.0.1",
-            mysqlx::SessionOption::PORT, MYSQL_PORT,
+            mysqlx::SessionOption::PORT, MYSQL_HOST_PORT,
             mysqlx::SessionOption::USER, MYSQL_USER,
             mysqlx::SessionOption::PWD, MYSQL_PASSWORD,
             mysqlx::SessionOption::DB, MYSQL_DATABASE
